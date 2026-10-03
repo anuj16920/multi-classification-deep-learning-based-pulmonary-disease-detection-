@@ -1,0 +1,6 @@
+defaults_from: ../medxpert.yaml
+experiment: {id: EXP-A06, model: medxpert_router_graph, notes: "Ablation — router + graph (no memory)"}
+model: {memory: {enabled: false}}
+losses:
+  - {name: cross_entropy, weight: 1.0}
+  - {name: router_entropy, weight: 0.01}

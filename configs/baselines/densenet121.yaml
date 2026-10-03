@@ -1,0 +1,3 @@
+defaults_from: ../default.yaml
+experiment: {id: EXP-002, model: densenet121, notes: "Baseline — timm densenet121"}
+model: {name: baseline, backbone: densenet121, pretrained: true, dropout: 0.2}

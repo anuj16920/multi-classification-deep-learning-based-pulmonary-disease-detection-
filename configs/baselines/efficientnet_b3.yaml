@@ -1,0 +1,4 @@
+defaults_from: ../default.yaml
+experiment: {id: EXP-003, model: efficientnet_b3, notes: "Baseline — timm tf_efficientnet_b3"}
+model: {name: baseline, backbone: tf_efficientnet_b3, pretrained: true, dropout: 0.2}
+data: {image_size: 300}   # EfficientNet-B3 native 300

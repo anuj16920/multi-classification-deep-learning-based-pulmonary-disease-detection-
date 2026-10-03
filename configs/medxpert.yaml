@@ -1,0 +1,48 @@
+defaults_from: default.yaml
+
+experiment:
+  id: EXP-010
+  model: medxpert
+  notes: "Full MEDXPERT — shared encoder + router + experts + memory + graph + fusion head"
+
+model:
+  name: medxpert
+  encoder:
+    backbone: convnext_tiny      # implementation decision, documented
+    pretrained: true
+    out_dim: 768
+  experts:
+    n_experts: 4                 # one per class, aligned with disease groups
+    hidden_dim: 384              # parameter-efficient block, NOT a full backbone
+    dropout: 0.1
+  router:
+    hidden_dim: 192
+    temperature: 1.0
+    top_k: 0                     # 0 = soft routing (differentiable softmax); >0 = top-k
+    entropy_reg: 0.01            # encourage balanced routing when 0 < val < 1
+  memory:
+    enabled: true
+    prototypes_per_class: 1
+    momentum: 0.9                # P_c(t+1) = momentum*P_c(t) + (1-momentum)*F_c
+    update_mode: ema             # 'ema' | 'learnable'
+  graph:
+    enabled: true
+    layer: gat                   # 'gat' | 'gcn'
+    hidden_dim: 192
+    heads: 4
+    edge_init: learned           # learned adjacency (fully connected prior)
+    n_layers: 2
+  fusion:
+    mode: attention              # 'attention' | 'weighted_sum' | 'concat_proj'
+    out_dim: 256
+  head:
+    dropout: 0.2
+
+losses:
+  - {name: cross_entropy, weight: 1.0}
+  - {name: router_entropy, weight: 0.01}      # auxiliary — encourages non-degenerate routing
+  - {name: prototype_consistency, weight: 0.1}
+  # expert_specialization: binary head per expert, pushed toward its assigned
+  # class. Default weight is conservative so the main classifier dominates.
+  # Set to 0.0 in ablations that disable experts/mapping.
+  - {name: expert_specialization, weight: 0.05}

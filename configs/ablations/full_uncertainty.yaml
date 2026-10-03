@@ -1,0 +1,3 @@
+defaults_from: ../medxpert.yaml
+experiment: {id: EXP-A09, model: medxpert_full_uncertainty, notes: "Ablation — full + temperature scaling + entropy"}
+uncertainty: {method: temperature_scaling, report_entropy: true}

@@ -1,0 +1,5 @@
+class,precision,recall,f1,auc,support
+Normal,0.3333333333333333,1.0,0.5,1.0,4
+Tuberculosis,0.0,0.0,0.0,1.0,4
+COVID-19,1.0,1.0,1.0,1.0,4
+Pneumonia,0.0,0.0,0.0,0.6666666666666667,4

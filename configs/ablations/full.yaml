@@ -1,0 +1,2 @@
+defaults_from: ../medxpert.yaml
+experiment: {id: EXP-A08, model: medxpert_full, notes: "Ablation — full MEDXPERT (router + memory + graph)"}

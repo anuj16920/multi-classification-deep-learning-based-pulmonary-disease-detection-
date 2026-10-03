@@ -1,0 +1,3 @@
+defaults_from: ../default.yaml
+experiment: {id: EXP-001, model: resnet50, notes: "Baseline — timm resnet50 head replaced"}
+model: {name: baseline, backbone: resnet50, pretrained: true, dropout: 0.2}

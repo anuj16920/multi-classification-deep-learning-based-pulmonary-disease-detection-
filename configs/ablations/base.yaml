@@ -1,0 +1,10 @@
+defaults_from: ../medxpert.yaml
+experiment: {id: EXP-A01, model: medxpert_base, notes: "Ablation — shared encoder + head only (no router/memory/graph)"}
+model:
+  experts: {n_experts: 1}
+  router:  {top_k: 0, entropy_reg: 0.0}
+  memory:  {enabled: false}
+  graph:   {enabled: false}
+  fusion:  {mode: weighted_sum}
+losses:
+  - {name: cross_entropy, weight: 1.0}

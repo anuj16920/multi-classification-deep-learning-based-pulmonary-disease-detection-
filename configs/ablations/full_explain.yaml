@@ -1,0 +1,3 @@
+defaults_from: ../medxpert.yaml
+experiment: {id: EXP-A10, model: medxpert_full_explain, notes: "Ablation — full + batch Grad-CAM export"}
+explainability: {method: gradcam, n_examples_per_class: 16}

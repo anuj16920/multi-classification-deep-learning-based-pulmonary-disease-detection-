@@ -1,0 +1,17 @@
+path,label,label_name,pred,pred_name,prob_Normal,prob_Tuberculosis,prob_COVID-19,prob_Pneumonia
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Normal\synth_00_0001.png,0,Normal,0,Normal,0.44201294,0.11575584,0.20359148,0.23863976
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Normal\synth_00_0008.png,0,Normal,0,Normal,0.44139752,0.11640827,0.20403267,0.23816158
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Normal\synth_00_0013.png,0,Normal,0,Normal,0.44165137,0.11606563,0.20430245,0.23798051
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Normal\synth_00_0014.png,0,Normal,0,Normal,0.44247475,0.116620384,0.20434968,0.2365553
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Tuberculosis\synth_01_0006.png,1,Tuberculosis,0,Normal,0.39146265,0.14686525,0.17509232,0.28657985
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Tuberculosis\synth_01_0009.png,1,Tuberculosis,0,Normal,0.39277312,0.14711517,0.17532936,0.2847823
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Tuberculosis\synth_01_0011.png,1,Tuberculosis,0,Normal,0.39345467,0.14694454,0.1763077,0.2832931
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Tuberculosis\synth_01_0013.png,1,Tuberculosis,0,Normal,0.39416215,0.14564826,0.17582728,0.28436226
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\COVID-19\synth_02_0009.png,2,COVID-19,2,COVID-19,0.3295554,0.10129968,0.37088165,0.19826324
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\COVID-19\synth_02_0012.png,2,COVID-19,2,COVID-19,0.3306933,0.101795435,0.36920154,0.19830972
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\COVID-19\synth_02_0014.png,2,COVID-19,2,COVID-19,0.32776797,0.10209725,0.37213865,0.19799611
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\COVID-19\synth_02_0015.png,2,COVID-19,2,COVID-19,0.3292546,0.1016784,0.37092778,0.19813928
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Pneumonia\synth_03_0002.png,3,Pneumonia,0,Normal,0.42844173,0.1185939,0.20213705,0.25082734
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Pneumonia\synth_03_0003.png,3,Pneumonia,0,Normal,0.42637816,0.120232925,0.20116074,0.25222823
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Pneumonia\synth_03_0009.png,3,Pneumonia,0,Normal,0.42606547,0.119244024,0.20391215,0.25077835
+C:\Users\lomte\AppData\Local\Temp\medxpert_debug\EXP-DEBUG\raw\Pneumonia\synth_03_0011.png,3,Pneumonia,0,Normal,0.42594606,0.11929874,0.20327957,0.2514756

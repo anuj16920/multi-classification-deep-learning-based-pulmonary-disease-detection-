@@ -1,0 +1,28 @@
+.venv
+.venv/
+venv
+venv/
+lib
+lib/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+
+# Exclude all dataset files
+data/
+
+# Top level logs & checkpoints (if any)
+logs/
+checkpoints/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+

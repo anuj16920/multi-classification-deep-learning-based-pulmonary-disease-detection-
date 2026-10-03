@@ -1,0 +1,96 @@
+# Shared defaults — individual configs override only what they change.
+
+project:
+  name: medxpert
+  seed: 42
+
+# Debug block. The official training script REFUSES to run when debug.enabled
+# is true unless the operator passes --i-am-debugging. Keeping this in config
+# (not just CLI) means a debug artifact is auditable in config.yaml.
+debug:
+  enabled: false
+  synthetic_data: false
+
+classes:
+  # Canonical order — matches src/medxpert/utils/classes.py.
+  # Changing this list breaks every saved checkpoint. Don't.
+  - {id: 0, name: Normal}
+  - {id: 1, name: Tuberculosis}
+  - {id: 2, name: COVID-19}
+  - {id: 3, name: Pneumonia}
+
+data:
+  raw_dir: data/raw
+  splits_dir: data/splits
+  image_size: 224
+  mean: [0.485, 0.456, 0.406]   # ImageNet; swap for CXR-specific stats if measured
+  std:  [0.229, 0.224, 0.225]
+  train_batch_size: 32
+  eval_batch_size:  64
+  num_workers: 2
+  # Expected composition — verifier raises on mismatch.
+  expected:
+    total: 10000
+    per_class: 2500
+    train: 8000       # development pool (train + val together)
+    test: 2000
+    train_per_class: 2000   # dev-pool per class; val is carved out of this
+    test_per_class: 500
+  # Fraction of the development pool held out for VALIDATION. Test is
+  # untouched. With train_per_class=2000 and val_fraction=0.10, each class
+  # gets 1800 train + 200 val + 500 test.
+  validation_fraction: 0.10
+  compute_image_hash: true
+
+training:
+  epochs: 30
+  optimizer: adamw
+  lr: 0.0003
+  weight_decay: 0.01
+  scheduler: cosine
+  warmup_epochs: 2
+  gradient_clip: 1.0
+  mixed_precision: true
+  early_stopping_patience: 7
+  monitor_metric: f1_macro
+  monitor_mode: max
+
+loss:
+  name: cross_entropy
+  label_smoothing: 0.0
+  class_weights: null   # set to [w0,w1,w2,w3] if imbalanced
+
+augment:
+  horizontal_flip: 0.5
+  rotation_deg: 10
+  brightness: 0.1
+  contrast: 0.1
+  random_erasing: 0.0
+
+evaluation:
+  average: [macro, weighted]
+  auc_strategy: ovr
+  save_predictions: true
+  calibration_bins: 15
+  save_routing_analysis: true
+  save_graph_adjacency: true
+  save_memory_state: true
+
+uncertainty:
+  # IMPORTANT: temperature scaling fits on the VALIDATION set and freezes
+  # before touching the test set. Never fit on test.
+  method: temperature_scaling   # or 'none'
+  report_entropy: true
+  low_confidence_threshold: 0.6
+
+explainability:
+  method: gradcam
+  n_examples_per_class: 4
+
+# Target reproduction values — REFERENCES ONLY, never written as metrics.
+target_reference:
+  accuracy: 0.9735
+  precision: 0.9735
+  recall: 0.9735
+  f1: 0.9734
+  auc: 0.9989

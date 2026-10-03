@@ -1,0 +1,5 @@
+,Normal,Tuberculosis,COVID-19,Pneumonia
+Normal,476,0,3,21
+Tuberculosis,0,500,0,0
+COVID-19,2,0,496,2
+Pneumonia,24,0,5,471
