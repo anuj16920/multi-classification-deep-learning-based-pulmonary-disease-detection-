@@ -1,0 +1,6 @@
+Configuration,Accuracy (%),Precision (%),Recall (%),F1 Score (%),AUC-ROC (%)
+EfficientNet-B3 Only,87.87,88.25,87.88,87.90,97.71
+EfficientNet + CBAM,85.06,85.38,85.07,85.13,96.78
+EfficientNet + DyDA,86.52,87.09,86.50,86.51,97.65
+EfficientNet + Swin,95.51,95.54,95.46,95.48,99.69
+Full DyDA-Net,89.05,89.03,89.01,88.94,98.55

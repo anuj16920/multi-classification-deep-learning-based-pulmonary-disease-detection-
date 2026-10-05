@@ -1,0 +1,6 @@
+Class,Precision (%),Recall (%),F1 Score (%),AUC-ROC (%)
+Normal,94.12,96.52,95.3,99.78
+Pneumonia,99.11,99.11,99.11,99.99
+Tuberculosis,96.38,94.67,95.52,99.78
+COVID-19,99.78,99.11,99.44,99.89
+Macro Average,97.35,97.35,97.34,99.86
