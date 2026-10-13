@@ -1,0 +1,34 @@
+{
+  "random_seed": 42,
+  "class_mapping": {
+    "Normal": 0,
+    "Tuberculosis": 1,
+    "COVID-19": 2,
+    "Pneumonia": 3
+  },
+  "counts": {
+    "Normal": {
+      "train": 1800,
+      "val": 200,
+      "test": 500
+    },
+    "Tuberculosis": {
+      "train": 1800,
+      "val": 200,
+      "test": 500
+    },
+    "COVID-19": {
+      "train": 1800,
+      "val": 200,
+      "test": 500
+    },
+    "Pneumonia": {
+      "train": 1800,
+      "val": 200,
+      "test": 500
+    }
+  },
+  "validation_fraction": 0.1,
+  "manifest_sha256": "19539e98f0bdbb9a4e9a8eccbbc9a3d2dc6fb11e887329ecb7aa1478cd993b60",
+  "created_utc": "2026-10-03T06:58:20Z"
+}
