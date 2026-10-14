@@ -1,0 +1,52 @@
+{
+  "accuracy": 0.9755,
+  "precision_macro": 0.9756160315147092,
+  "recall_macro": 0.9754999999999999,
+  "f1_macro": 0.9755400048080585,
+  "precision_weighted": 0.9756160315147092,
+  "recall_weighted": 0.9755,
+  "f1_weighted": 0.9755400048080585,
+  "auc_ovr_macro": 0.9982496666666666,
+  "test_ece": 0.018538809657096894,
+  "test_brier": 0.0445170371764911,
+  "val_ece": 0.02251334451138969,
+  "val_brier": 0.04658698358383038,
+  "temperature": 1.4689269065856934,
+  "mean_confidence": 0.9931489825248718,
+  "mean_entropy": 0.03309008851647377,
+  "frac_low_confidence": 0.0015,
+  "max_entropy_possible": 1.3862943611198906,
+  "routing_report": {
+    "mean_routing_per_class": [
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "support_per_class": [
+      500,
+      500,
+      500,
+      500
+    ],
+    "expert_utilization": [
+      1.0
+    ],
+    "mean_routing_entropy": 0.0,
+    "expert_to_class": {
+      "0": "Normal",
+      "1": "Tuberculosis",
+      "2": "COVID-19",
+      "3": "Pneumonia"
+    },
+    "expert_class_alignment_top1": 0.25
+  }
+}

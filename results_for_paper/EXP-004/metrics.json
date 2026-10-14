@@ -1,0 +1,20 @@
+{
+  "accuracy": 0.959,
+  "precision_macro": 0.9591488393553211,
+  "recall_macro": 0.9590000000000001,
+  "f1_macro": 0.9590293870827888,
+  "precision_weighted": 0.9591488393553211,
+  "recall_weighted": 0.959,
+  "f1_weighted": 0.9590293870827888,
+  "auc_ovr_macro": 0.9961166666666667,
+  "test_ece": 0.015602178171277091,
+  "test_brier": 0.06373675227139347,
+  "val_ece": 0.012887881770729975,
+  "val_brier": 0.05117345237052644,
+  "temperature": 1.1684942245483398,
+  "mean_confidence": 0.9720332026481628,
+  "mean_entropy": 0.0819782242178917,
+  "frac_low_confidence": 0.0175,
+  "max_entropy_possible": 1.3862943611198906,
+  "routing_report": null
+}
