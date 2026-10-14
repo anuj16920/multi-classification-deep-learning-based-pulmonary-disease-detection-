@@ -64,7 +64,7 @@ Evaluating the specific contribution of individual architectural components (Rou
 | **+ Router** | Router only | EXP-A02 | **Completed** | **97.35** | **97.38** | **97.35** | **97.36** | **99.74** | **0.0220** | 26 | 90m 59s |
 | **+ Memory** | Memory only | EXP-A03 | Queued | — | — | — | — | — | — | — | — |
 | **+ Graph** | Graph only | EXP-A04 | Queued | — | — | — | — | — | — | — | — |
-| **+ Router + Memory** | Router + Memory | EXP-A05 | **Queued / Next** | — | — | — | — | — | — | — | — |
+| **+ Router + Memory** | Router + Memory | EXP-A05 | **Completed** | **97.65** | **97.66** | **97.65** | **97.65** | **99.75** | **0.0157** | 23 | 91m 35s |
 | **+ Router + Graph** | Router + Graph | EXP-A06 | Queued | — | — | — | — | — | — | — | — |
 | **+ Memory + Graph** | Memory + Graph | EXP-A07 | Queued | — | — | — | — | — | — | — | — |
 | **Full MEDXPERT** *(Reference)* | Router + Memory + Graph | EXP-010 | **Completed** | 97.15 | 97.14 | 97.15 | 97.15 | 99.81 | 0.0192 | 23 | 94m 28s |
@@ -117,7 +117,13 @@ All support counts: 500 test images per disease class (2,000 total).
 - **COVID-19**: Precision 99.80%, Recall 97.60%, F1 98.69%, AUC 99.98%
 - **Pneumonia**: Precision 94.30%, Recall 96.00%, F1 95.14%, AUC 99.38%
 
-### 4.8 Full MEDXPERT Reference (`EXP-010`)
+### 4.8 Base + Router + Memory (`EXP-A05`)
+- **Normal**: Precision 97.34%, Recall 95.20%, F1 96.26%, AUC 99.62%
+- **Tuberculosis**: Precision 99.60%, Recall 100.00%, F1 99.80%, AUC 100.00%
+- **COVID-19**: Precision 98.80%, Recall 98.80%, F1 98.80%, AUC 99.93%
+- **Pneumonia**: Precision 94.89%, Recall 96.60%, F1 95.74%, AUC 99.46%
+
+### 4.9 Full MEDXPERT Reference (`EXP-010`)
 - **Normal**: Precision 94.82%, Recall 95.20%, F1 95.01%, AUC 99.64%
 - **Tuberculosis**: Precision 100.00%, Recall 100.00%, F1 100.00%, AUC 100.00%
 - **COVID-19**: Precision 98.41%, Recall 99.20%, F1 98.80%, AUC 99.96%
@@ -134,10 +140,11 @@ All support counts: 500 test images per disease class (2,000 total).
 5. **Swin-T (`EXP-005`)**: Early-stopped at epoch 29 due to 7 consecutive epochs without validation improvement. Best validation macro F1 (`0.9725`) achieved at epoch 22. Learning rate override was removed to inherit the 3e-4 reference budget.
 6. **Base ConvNeXt-Tiny (`EXP-A01`)**: Completed all 30 epochs. Best validation macro F1 (`0.9764`) achieved at epoch 30.
 7. **Base + Router (`EXP-A02`)**: Completed all 30 epochs. Best validation macro F1 (`0.9701`) achieved at epoch 26.
+8. **Base + Router + Memory (`EXP-A05`)**: Completed all 30 epochs. Best validation macro F1 (`0.9712`) achieved at epoch 23.
 
 ---
 
 ## 6. Artifact Archive for Paper Publication
 All evaluation artifacts (`metrics.json`, `config.yaml`, `history.json`, `confusion_matrix.csv`) for the completed models have been packaged without heavy weight checkpoints (`.pt` excluded):
-- **Directory**: `results_for_paper/` (`EXP-001`, `EXP-002`, `EXP-003`, `EXP-004`, `EXP-005`, `EXP-A01`, `EXP-A02`, `EXP-010`)
-- **Archive File**: `results_for_paper.zip` (36 KB)
+- **Directory**: `results_for_paper/` (`EXP-001`, `EXP-002`, `EXP-003`, `EXP-004`, `EXP-005`, `EXP-A01`, `EXP-A02`, `EXP-A05`, `EXP-010`)
+- **Archive File**: `results_for_paper.zip` (40 KB)
